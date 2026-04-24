@@ -20,4 +20,4 @@
 
 ## Estado actual
 
-La Fase 1 esta iniciada con documentacion central y una primera version estatica de la interfaz.
+La Fase 2 esta en curso con la base React + TypeScript y la migracion de la interfaz a componentes por carpeta.

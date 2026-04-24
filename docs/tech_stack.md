@@ -10,7 +10,7 @@
 ## Estado por fase
 
 - Fase 1: HTML y CSS puros para la maqueta base.
-- Fase 2: React + TypeScript con folder-by-component.
+- Fase 2: React + TypeScript con folder-by-component y Vite.
 - Fase 3: Firebase Firestore para persistencia de libros.
 
 ## Decisiones tecnicas

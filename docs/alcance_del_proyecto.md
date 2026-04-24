@@ -22,3 +22,7 @@ Construir una aplicacion web para gestionar la lectura de libros en formato de b
 ## Criterio de evolucion
 
 El proyecto se construye por fases para evitar mezclar documentacion, maquetacion, componenteizacion e integracion de datos en un solo paso.
+
+## Estado de fase
+
+La Fase 2 incorpora la primera migracion a React + TypeScript y mantiene el alcance funcional centrado en gestion visual de libros.

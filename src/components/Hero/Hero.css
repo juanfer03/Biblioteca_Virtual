@@ -1,0 +1,70 @@
+.hero-card {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: rgba(255, 250, 243, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.hero-card__eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.hero-card__title {
+  margin: 0 0 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 0.98;
+  max-width: 11ch;
+}
+
+.hero-card__description {
+  margin: 0;
+  max-width: 58ch;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.hero-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+}
+
+.hero-card__button--primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fffaf3;
+}
+
+.hero-card__button--secondary {
+  background: transparent;
+  border-color: var(--border);
+}
+
+@media (max-width: 640px) {
+  .hero-card {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .hero-card__title {
+    max-width: 100%;
+  }
+}

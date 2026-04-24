@@ -4,14 +4,15 @@ Aplicacion web para gestionar lectura de libros con una metodologia Document Dri
 
 ## Estado del proyecto
 
-Fase actual: Fase 1 - Documentacion + Maquetacion HTML/CSS.
+Fase actual: Fase 2 - Migracion a React + TypeScript.
 
-Estado: Base documental creada y maqueta estatica inicial preparada sin React.
+Estado: Base documental creada y migracion inicial a componentes React en progreso.
 
 ## Decisiones tecnicas
 
 - Stack objetivo: React, TypeScript y Firebase.
 - Fase 1 ejecutada con HTML y CSS puros, sin framework frontend.
+- Fase 2 usa Vite, React + TypeScript y componentes organizados por carpeta.
 - La documentacion central vive en `/docs` y este README se mantiene como indice de estado.
 - La futura arquitectura seguira folder-by-component.
 
@@ -25,10 +26,12 @@ Estado: Base documental creada y maqueta estatica inicial preparada sin React.
 
 ## Vista actual
 
-- `index.html`: maqueta estatica principal de la biblioteca virtual.
-- `styles.css`: estilos base del layout y componentes visuales.
+- `index.html`: entrada Vite para montar la aplicacion React.
+- `src/main.tsx`: punto de arranque de la aplicacion.
+- `src/components/`: componentes organizados por carpeta.
+- `src/styles/global.css`: estilos globales de base.
 
 ## Proximas fases
 
-- Fase 2: migracion a React + TypeScript con componentes por carpeta.
+- Fase 2: completar migracion a React + TypeScript con interactividad local.
 - Fase 3: integracion con Firebase para persistencia de libros.
