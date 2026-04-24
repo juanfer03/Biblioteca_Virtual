@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca Virtual</title>
+    <meta
+      name="description"
+      content="Maqueta inicial de una biblioteca virtual para gestionar libros, estados de lectura y valoraciones."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">DDD / Fase 1</p>
+          <h1>Biblioteca Virtual</h1>
+        </div>
+        <nav class="topbar-nav" aria-label="Navegacion principal">
+          <a href="#coleccion">Coleccion</a>
+          <a href="#registro">Registrar libro</a>
+          <a href="#estado">Estado</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="section-label">Gestion de lectura</p>
+            <h2>Organiza tu biblioteca digital con una vista clara y lista para evolucionar a React.</h2>
+            <p>
+              Esta primera version define la base visual del proyecto: una coleccion de libros,
+              un formulario de registro y un panel de estados para leer, completar y valorar.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#registro">Agregar libro</a>
+              <a class="button secondary" href="#coleccion">Ver coleccion</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Resumen del proyecto">
+            <div class="metric-card accent">
+              <span>Libros registrados</span>
+              <strong>24</strong>
+            </div>
+            <div class="metric-grid">
+              <article class="metric-card">
+                <span>Por leer</span>
+                <strong>08</strong>
+              </article>
+              <article class="metric-card">
+                <span>Leidos</span>
+                <strong>16</strong>
+              </article>
+            </div>
+            <div class="rating-strip" aria-label="Valoracion promedio">
+              <span>Valoracion promedio</span>
+              <strong>4.7 / 5</strong>
+            </div>
+          </aside>
+        </section>
+
+        <section class="collection-section" id="coleccion">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">Coleccion</p>
+              <h3>Vista tipo biblioteca virtual</h3>
+            </div>
+            <div class="filter-pills" aria-label="Filtros visuales">
+              <span>Todos</span>
+              <span>Por leer</span>
+              <span>Leidos</span>
+              <span>Favoritos</span>
+            </div>
+          </div>
+
+          <div class="book-grid">
+            <article class="book-card">
+              <div class="book-cover cover-1"></div>
+              <div>
+                <p class="book-status pending">Por leer</p>
+                <h4>Clean Architecture</h4>
+                <p>Robert C. Martin</p>
+                <div class="book-meta">
+                  <span>4.5 estrellas</span>
+                  <span>412 paginas</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div class="book-cover cover-2"></div>
+              <div>
+                <p class="book-status done">Leido</p>
+                <h4>Atomic Habits</h4>
+                <p>James Clear</p>
+                <div class="book-meta">
+                  <span>5 estrellas</span>
+                  <span>320 paginas</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div class="book-cover cover-3"></div>
+              <div>
+                <p class="book-status favorite">Favorito</p>
+                <h4>El nombre del viento</h4>
+                <p>Patrick Rothfuss</p>
+                <div class="book-meta">
+                  <span>4.8 estrellas</span>
+                  <span>662 paginas</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="workspace-grid" aria-label="Espacios funcionales">
+          <article class="panel-form" id="registro">
+            <p class="section-label">Registro</p>
+            <h3>Agregar nuevo libro</h3>
+            <form class="book-form">
+              <label>
+                Titulo
+                <input type="text" placeholder="Nombre del libro" />
+              </label>
+              <label>
+                Autor
+                <input type="text" placeholder="Nombre del autor" />
+              </label>
+              <label>
+                Estado
+                <select>
+                  <option>Por leer</option>
+                  <option>Leido</option>
+                </select>
+              </label>
+              <label>
+                Calificacion
+                <input type="range" min="1" max="5" value="4" />
+              </label>
+              <button class="button primary" type="button">Guardar libro</button>
+            </form>
+          </article>
+
+          <article class="panel-state" id="estado">
+            <p class="section-label">Estado</p>
+            <h3>Resumen de lectura</h3>
+            <ul class="state-list">
+              <li>
+                <strong>Objetivo mensual</strong>
+                <span>Leer 4 libros</span>
+              </li>
+              <li>
+                <strong>Avance actual</strong>
+                <span>2 libros completados</span>
+              </li>
+              <li>
+                <strong>Proxima integracion</strong>
+                <span>Persistencia en Firebase</span>
+              </li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
