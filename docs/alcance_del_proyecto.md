@@ -8,6 +8,7 @@ Construir una aplicacion web para gestionar la lectura de libros en formato de b
 
 - Agregar libros a una coleccion personal.
 - Visualizar libros en una galeria tipo biblioteca virtual.
+- Buscar libros en Open Library como fuente publica gratuita.
 - Cambiar el estado de cada libro entre por leer y leido.
 - Calificar libros con estrellas.
 - Preparar la base tecnica para persistencia futura con Firebase.
@@ -18,6 +19,7 @@ Construir una aplicacion web para gestionar la lectura de libros en formato de b
 - Recomendaciones automaticas.
 - Sincronizacion multiplataforma avanzada.
 - Busqueda semantica o filtros complejos.
+- Persistencia en la nube de los resultados de la API publica.
 
 ## Criterio de evolucion
 
@@ -25,4 +27,4 @@ El proyecto se construye por fases para evitar mezclar documentacion, maquetacio
 
 ## Estado de fase
 
-La Fase 2 incorpora la primera migracion a React + TypeScript y mantiene el alcance funcional centrado en gestion visual de libros.
+La Fase 2 incorpora la primera migracion a React + TypeScript y agrega la primera integracion con Open Library para busqueda remota de libros.

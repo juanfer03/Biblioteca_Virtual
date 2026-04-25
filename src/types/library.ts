@@ -29,6 +29,15 @@ export interface BookStats {
   averageRating: number;
 }
 
+export interface OpenLibraryBookPreview {
+  key: string;
+  title: string;
+  author: string;
+  firstPublishYear?: number;
+  coverId?: number;
+  editionCount?: number;
+}
+
 export const BOOK_STATUS_LABELS: Record<BookStatus, string> = {
   por_leer: 'Por leer',
   leido: 'Leido'

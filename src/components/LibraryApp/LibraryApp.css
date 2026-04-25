@@ -9,6 +9,7 @@
 }
 
 .library-app__hero-grid,
+.library-app__api-grid,
 .library-app__form-grid {
   display: grid;
   gap: 24px;
@@ -21,6 +22,10 @@
 
 .library-app__form-grid {
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+}
+
+.library-app__api-grid {
+  grid-template-columns: 1fr;
 }
 
 .library-app__phase-note {
@@ -57,6 +62,7 @@
 
 @media (max-width: 960px) {
   .library-app__hero-grid,
+  .library-app__api-grid,
   .library-app__form-grid {
     grid-template-columns: 1fr;
   }

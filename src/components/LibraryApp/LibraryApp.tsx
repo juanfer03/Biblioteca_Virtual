@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Header } from '../Header/Header';
 import { Hero } from '../Hero/Hero';
 import { StatsPanel } from '../StatsPanel/StatsPanel';
+import { OpenLibrarySearch } from '../OpenLibrarySearch/OpenLibrarySearch';
 import { BookShelf } from '../BookShelf/BookShelf';
 import { BookForm } from '../BookForm/BookForm';
 import { initialBooks } from '../../data/initialBooks';
@@ -81,10 +82,12 @@ export function LibraryApp({ phaseLabel = 'Fase 2' }: LibraryAppProps) {
         <Hero
           eyebrow="Gestion de lectura"
           title="Organiza tu biblioteca digital con una vista clara y editable."
-          description="La Fase 2 convierte la maqueta en una aplicacion React + TypeScript con componentes reutilizables, filtros por estado, valoracion por estrellas y registro local de libros."
+          description="La Fase 2 convierte la maqueta en una aplicacion React + TypeScript con componentes reutilizables, filtros por estado, valoracion por estrellas, registro local de libros y busqueda remota en Open Library."
         />
         <StatsPanel stats={stats} />
       </div>
+
+      <OpenLibrarySearch />
 
       <BookShelf
         books={books}

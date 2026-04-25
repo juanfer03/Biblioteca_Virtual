@@ -22,12 +22,17 @@ Se migra a una estructura folder-by-component bajo `src/components` con la sigui
 - `src/components/BookShelf`: galeria filtrable de libros.
 - `src/components/BookCard`: tarjeta individual de libro con estado y valoracion.
 - `src/components/BookForm`: formulario para agregar libros.
+- `src/components/OpenLibrarySearch`: buscador remoto contra Open Library.
+
+## Integraciones de datos
+
+- `src/api/openLibrary.ts`: consulta publica de catalogo y construccion de URLs de portada.
 
 ## Capas logicas previstas
 
 - Presentacion: componentes visuales y layouts.
 - Dominio UI: estados visuales de libros, filtros y acciones.
-- Datos: integracion futura con Firebase.
+- Datos: integracion publica con Open Library y futura persistencia con Firebase.
 
 ## Criterios de escalabilidad
 
