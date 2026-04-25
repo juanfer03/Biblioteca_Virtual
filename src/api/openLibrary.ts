@@ -7,6 +7,7 @@ interface OpenLibrarySearchDoc {
   first_publish_year?: number;
   cover_i?: number;
   edition_count?: number;
+  number_of_pages_median?: number;
 }
 
 interface OpenLibrarySearchResponse {
@@ -30,7 +31,10 @@ export async function searchOpenLibraryBooks(query: string, limit = 6): Promise<
 
   const searchUrl = new URL('https://openlibrary.org/search.json');
   searchUrl.searchParams.set('q', normalizedQuery);
-  searchUrl.searchParams.set('fields', 'key,title,author_name,first_publish_year,cover_i,edition_count');
+  searchUrl.searchParams.set(
+    'fields',
+    'key,title,author_name,first_publish_year,cover_i,edition_count,number_of_pages_median'
+  );
   searchUrl.searchParams.set('limit', String(limit));
   searchUrl.searchParams.set('lang', 'es');
 
@@ -48,7 +52,8 @@ export async function searchOpenLibraryBooks(query: string, limit = 6): Promise<
     author: doc.author_name?.[0] ?? 'Autor desconocido',
     firstPublishYear: doc.first_publish_year,
     coverId: doc.cover_i,
-    editionCount: doc.edition_count
+    editionCount: doc.edition_count,
+    pageCount: doc.number_of_pages_median
   }));
 }
 

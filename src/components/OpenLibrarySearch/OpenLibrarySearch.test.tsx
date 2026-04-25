@@ -8,6 +8,8 @@ describe('OpenLibrarySearch', () => {
   });
 
   it('searches books from Open Library and renders the results', async () => {
+    const handleAddBook = vi.fn();
+
     vi.stubGlobal(
       'fetch',
       vi.fn().mockResolvedValue({
@@ -20,19 +22,30 @@ describe('OpenLibrarySearch', () => {
               author_name: ['Robert C. Martin'],
               first_publish_year: 2017,
               cover_i: 123,
-              edition_count: 42
+              edition_count: 42,
+              number_of_pages_median: 432
             }
           ]
         })
       })
     );
 
-    render(<OpenLibrarySearch defaultQuery="clean architecture" />);
+    render(<OpenLibrarySearch defaultQuery="clean architecture" onAddBook={handleAddBook} />);
 
     fireEvent.click(screen.getByRole('button', { name: 'Buscar' }));
 
     await waitFor(() => {
       expect(screen.getByText('Clean Architecture')).toBeTruthy();
+    });
+
+    fireEvent.click(screen.getByRole('button', { name: 'Agregar a mi lista' }));
+
+    expect(handleAddBook).toHaveBeenCalledWith({
+      title: 'Clean Architecture',
+      author: 'Robert C. Martin',
+      pages: '432',
+      status: 'por_leer',
+      rating: 4
     });
   });
 });

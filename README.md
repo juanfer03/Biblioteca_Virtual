@@ -14,7 +14,7 @@ Estado: Base documental creada, migracion a React completada y conexion inicial 
 - Fuente publica de catalogo: Open Library, sin API key.
 - Fase 1 ejecutada con HTML y CSS puros, sin framework frontend.
 - Fase 2 usa Vite, React + TypeScript y componentes organizados por carpeta.
-- Fase 2 conecta una API publica de libros para busqueda y consulta remota.
+- Fase 2 conecta una API publica de libros para busqueda y para agregar resultados a la coleccion local.
 - La documentacion central vive en `/docs` y este README se mantiene como indice de estado.
 - La futura arquitectura seguira folder-by-component.
 
@@ -37,5 +37,5 @@ Estado: Base documental creada, migracion a React completada y conexion inicial 
 ## Proximas fases
 
 - Fase 2: completar migracion a React + TypeScript con interactividad local.
-- Fase 2: conectar la API publica de Open Library para busqueda remota de libros.
+- Fase 2: conectar la API publica de Open Library para busqueda remota y alta local de libros.
 - Fase 3: integracion con Firebase para persistencia de libros.

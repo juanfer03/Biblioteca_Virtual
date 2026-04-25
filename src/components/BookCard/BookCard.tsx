@@ -19,7 +19,7 @@ export function BookCard({ book, onToggleStatus, onRateBook }: BookCardProps) {
         <p className="book-card__author">{book.author}</p>
 
         <div className="book-card__meta">
-          <span>{book.pages} paginas</span>
+          <span>{book.pages > 0 ? `${book.pages} paginas` : 'Paginas no disponibles'}</span>
           <span>{book.rating} / 5 estrellas</span>
         </div>
 

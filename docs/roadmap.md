@@ -11,7 +11,7 @@
 - Crear estructura `src/components` por componente.
 - Convertir la maqueta en componentes React.
 - Implementar interactividad local.
-- Conectar una API publica gratuita de libros.
+- Conectar una API publica gratuita de libros y permitir alta local desde resultados.
 
 ## Fase 3 - Firebase
 
@@ -21,4 +21,4 @@
 
 ## Estado actual
 
-La Fase 2 esta en curso con la base React + TypeScript, la migracion de la interfaz a componentes por carpeta y la conexion de Open Library como catalogo publico.
+La Fase 2 esta en curso con la base React + TypeScript, la migracion de la interfaz a componentes por carpeta y la conexion de Open Library como catalogo publico con alta local.

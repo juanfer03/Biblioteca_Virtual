@@ -1,17 +1,18 @@
 import { FormEvent, useState } from 'react';
-import { buildOpenLibraryBookUrl, getOpenLibraryCoverUrl, searchOpenLibraryBooks } from '../../api/openLibrary';
+import { getOpenLibraryCoverUrl, searchOpenLibraryBooks } from '../../api/openLibrary';
 import { OpenLibraryBookPreview } from '../../types/library';
 import { OpenLibrarySearchProps } from './OpenLibrarySearch.types';
 import './OpenLibrarySearch.css';
 
 const INITIAL_QUERY = 'react';
 
-export function OpenLibrarySearch({ defaultQuery = INITIAL_QUERY }: OpenLibrarySearchProps) {
+export function OpenLibrarySearch({ defaultQuery = INITIAL_QUERY, onAddBook }: OpenLibrarySearchProps) {
   const [query, setQuery] = useState(defaultQuery);
   const [submittedQuery, setSubmittedQuery] = useState('');
   const [results, setResults] = useState<OpenLibraryBookPreview[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [addedKeys, setAddedKeys] = useState<string[]>([]);
 
   async function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -32,12 +33,24 @@ export function OpenLibrarySearch({ defaultQuery = INITIAL_QUERY }: OpenLibraryS
       const books = await searchOpenLibraryBooks(trimmedQuery);
       setResults(books);
       setSubmittedQuery(trimmedQuery);
+      setAddedKeys([]);
     } catch {
       setResults([]);
       setErrorMessage('No se pudo cargar la busqueda de Open Library. Intenta de nuevo.');
     } finally {
       setIsLoading(false);
     }
+  }
+
+  function handleAddBook(book: OpenLibraryBookPreview) {
+    onAddBook({
+      title: book.title,
+      author: book.author,
+      pages: String(book.pageCount ?? 0),
+      status: 'por_leer',
+      rating: 4
+    });
+    setAddedKeys((currentKeys) => [...currentKeys, book.key]);
   }
 
   return (
@@ -108,9 +121,14 @@ export function OpenLibrarySearch({ defaultQuery = INITIAL_QUERY }: OpenLibraryS
                   {book.editionCount ? <span>{book.editionCount} ediciones</span> : null}
                 </div>
 
-                <a className="open-library-search__link" href={buildOpenLibraryBookUrl(book.key)} target="_blank" rel="noreferrer">
-                  Ver en Open Library
-                </a>
+                <button
+                  className="open-library-search__add"
+                  type="button"
+                  onClick={() => handleAddBook(book)}
+                  disabled={addedKeys.includes(book.key)}
+                >
+                  {addedKeys.includes(book.key) ? 'Agregado a tu lista' : 'Agregar a mi lista'}
+                </button>
               </div>
             </article>
           ))}

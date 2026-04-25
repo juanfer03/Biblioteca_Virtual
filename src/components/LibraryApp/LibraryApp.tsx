@@ -39,6 +39,10 @@ export function LibraryApp({ phaseLabel = 'Fase 2' }: LibraryAppProps) {
     ]);
   }
 
+  function handleAddOpenLibraryBook(bookDraft: BookDraft) {
+    handleAddBook(bookDraft);
+  }
+
   function handleToggleStatus(bookId: string) {
     setBooks((currentBooks) =>
       currentBooks.map((book) =>
@@ -87,7 +91,7 @@ export function LibraryApp({ phaseLabel = 'Fase 2' }: LibraryAppProps) {
         <StatsPanel stats={stats} />
       </div>
 
-      <OpenLibrarySearch />
+      <OpenLibrarySearch onAddBook={handleAddOpenLibraryBook} />
 
       <BookShelf
         books={books}

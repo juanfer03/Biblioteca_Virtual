@@ -36,6 +36,7 @@ export interface OpenLibraryBookPreview {
   firstPublishYear?: number;
   coverId?: number;
   editionCount?: number;
+  pageCount?: number;
 }
 
 export const BOOK_STATUS_LABELS: Record<BookStatus, string> = {
