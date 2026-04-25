@@ -22,11 +22,11 @@ Se migra a una estructura folder-by-component bajo `src/components` con la sigui
 - `src/components/BookShelf`: galeria filtrable de libros.
 - `src/components/BookCard`: tarjeta individual de libro con estado y valoracion.
 - `src/components/BookForm`: formulario para agregar libros.
-- `src/components/OpenLibrarySearch`: buscador remoto contra Open Library con alta a la coleccion local.
+- `src/components/OpenLibrarySearch`: buscador remoto contra Open Library con alta a la coleccion local y portada.
 
 ## Integraciones de datos
 
-- `src/api/openLibrary.ts`: consulta publica de catalogo y mapeo de resultados al modelo local.
+- `src/api/openLibrary.ts`: consulta publica de catalogo y mapeo de resultados (incluida portada) al modelo local.
 
 ## Capas logicas previstas
 

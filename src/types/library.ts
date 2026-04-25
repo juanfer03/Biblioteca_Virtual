@@ -12,6 +12,7 @@ export interface Book {
   status: BookStatus;
   rating: number;
   coverTone: CoverTone;
+  coverUrl?: string;
 }
 
 export interface BookDraft {
@@ -20,6 +21,7 @@ export interface BookDraft {
   pages: string;
   status: BookStatus;
   rating: number;
+  coverUrl?: string;
 }
 
 export interface BookStats {

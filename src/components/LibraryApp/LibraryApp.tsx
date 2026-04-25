@@ -33,7 +33,8 @@ export function LibraryApp({ phaseLabel = 'Fase 2' }: LibraryAppProps) {
         pages: Number(bookDraft.pages),
         status: bookDraft.status,
         rating: bookDraft.rating,
-        coverTone: getCoverTone(currentBooks.length)
+        coverTone: getCoverTone(currentBooks.length),
+        coverUrl: bookDraft.coverUrl?.trim() || undefined
       },
       ...currentBooks
     ]);

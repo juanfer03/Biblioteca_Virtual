@@ -45,7 +45,8 @@ describe('OpenLibrarySearch', () => {
       author: 'Robert C. Martin',
       pages: '432',
       status: 'por_leer',
-      rating: 4
+      rating: 4,
+      coverUrl: 'https://covers.openlibrary.org/b/id/123-M.jpg'
     });
   });
 });

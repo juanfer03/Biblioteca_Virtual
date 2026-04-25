@@ -48,7 +48,8 @@ export function OpenLibrarySearch({ defaultQuery = INITIAL_QUERY, onAddBook }: O
       author: book.author,
       pages: String(book.pageCount ?? 0),
       status: 'por_leer',
-      rating: 4
+      rating: 4,
+      coverUrl: getOpenLibraryCoverUrl(book.coverId) || undefined
     });
     setAddedKeys((currentKeys) => [...currentKeys, book.key]);
   }

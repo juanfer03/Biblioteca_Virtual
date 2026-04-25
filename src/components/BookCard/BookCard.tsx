@@ -9,7 +9,11 @@ export function BookCard({ book, onToggleStatus, onRateBook }: BookCardProps) {
 
   return (
     <article className="book-card">
-      <div className={`book-card__cover book-card__cover--${book.coverTone}`} aria-hidden="true" />
+      {book.coverUrl ? (
+        <img className="book-card__cover book-card__cover--image" src={book.coverUrl} alt={`Portada de ${book.title}`} loading="lazy" />
+      ) : (
+        <div className={`book-card__cover book-card__cover--${book.coverTone}`} aria-hidden="true" />
+      )}
 
       <div className="book-card__body">
         <p className={`book-card__status book-card__status--${book.status}`}>
